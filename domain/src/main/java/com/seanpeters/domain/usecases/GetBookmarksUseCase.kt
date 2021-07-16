@@ -1,4 +1,7 @@
 package com.seanpeters.domain.usecases
 
-class GetBookmarksUseCase {
+import com.seanpeters.domain.repository.BooksRepository
+
+class GetBookmarksUseCase( private val booksRepository: BooksRepository){
+    suspend operator fun invoke() = booksRepository.getBookmarks()
 }
